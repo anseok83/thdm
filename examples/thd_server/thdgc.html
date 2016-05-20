@@ -1,0 +1,154 @@
+<html>
+<head>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <style type="text/css">
+<!--  
+#gaugeChart1_div, #gaugeChart2_div, #gaugeChart3_div {
+  float: left;
+  position: relative;
+  left: -50%;
+}
+#main_container {
+  float: left;
+  position: relative;
+  left: 50%;
+}
+-->
+   </style>
+
+  <script type="text/javascript">
+    google.charts.load('current', {'packages':['corechart','gauge']});
+    google.charts.setOnLoadCallback(drawChart);
+
+    // onload callback
+    function drawChart() {
+      // JSONP request
+      var jsonData = $.ajax({
+        url: 'https://api.mlab.com/api/1/databases/DB_NAME/collections/COLLECTION?s={"timestamp":-1}&l=1000&apiKey=YOUR_API_KEY',
+        dataType: 'json',
+      }).done(function (results) {
+        //document.write(JSON.stringify(results));
+
+        var lineChartData = new google.visualization.DataTable();
+
+        lineChartData.addColumn('datetime', 'Time');
+        lineChartData.addColumn('number', 'Temp');
+        lineChartData.addColumn('number', 'Humid');
+        lineChartData.addColumn('number', 'Dust');
+        
+        $.each(results, function (i, row) {
+          lineChartData.addRow([
+            (new Date(row.timestamp)),
+            parseFloat(row.temp),
+            parseFloat(row.humid),
+            parseFloat(row.dust)
+          ]);
+          //document.write(row.timestamp + '<br>');
+        });
+
+        var lastTemp = lineChartData.getValue(0, 1);
+        var lastHumid = lineChartData.getValue(0, 2);
+        var lastDust = lineChartData.getValue(0, 3);
+
+        var lastTime = lineChartData.getValue(0, 0);
+
+        // Line chart
+        var lineChart = new google.visualization.LineChart(document.getElementById('lineChart_div'));
+
+        var lineChartOptions = {
+          title: 'THD (Temp., Humid. and Dust) Monitoring',
+          curveType: 'function',
+          timeZone: 9,
+          legend: { position: 'top' }
+        };
+
+        lineChart.draw(lineChartData, lineChartOptions);
+
+        // Gauge chart
+        var gaugeChartData1 = google.visualization.arrayToDataTable([
+          ['Label', 'Value'],
+          ['Temp.', lastTemp] ]);
+
+        var gaugeChartData2 = google.visualization.arrayToDataTable([
+          ['Label', 'Value'],
+          ['Humid.', lastHumid] ]);
+
+        var gaugeChartData3 = google.visualization.arrayToDataTable([
+          ['Label', 'Value'],
+          ['Dust', lastDust] ]);
+
+        var gaugeChartOptions1 = {
+          min: 0, max: 50,
+          //width: 150, height: 150,
+          redFrom: 40, redTo: 50,
+          yellowFrom:30, yellowTo: 40,
+          minorTicks: 5
+        };
+
+        var gaugeChartOptions2 = {
+          min: 0, max: 100,
+          //width: 150, height: 150,
+          redFrom: 85, redTo: 100,
+          yellowFrom:70, yellowTo: 85,
+          minorTicks: 5
+        };
+
+        var gaugeChartOptions3 = {
+          min: 0, max: 500,
+          //width: 150, height: 150,
+          redFrom: 300, redTo: 500,
+          yellowFrom:100, yellowTo: 300,
+          minorTicks: 10 
+        };
+
+        var gaugeChart1 = new google.visualization.Gauge(document.getElementById('gaugeChart1_div'));
+        gaugeChart1.draw(gaugeChartData1, gaugeChartOptions1);
+
+        var gaugeChart2 = new google.visualization.Gauge(document.getElementById('gaugeChart2_div'));
+        gaugeChart2.draw(gaugeChartData2, gaugeChartOptions2);
+
+        var gaugeChart3 = new google.visualization.Gauge(document.getElementById('gaugeChart3_div'));
+        gaugeChart3.draw(gaugeChartData3, gaugeChartOptions3);
+
+        // On resize event
+        $(window).resize(function () {
+          lineChart.draw(lineChartData, lineChartOptions);
+          gaugeChart1.draw(gaugeChartData1, gaugeChartOptions1);
+          gaugeChart2.draw(gaugeChartData2, gaugeChartOptions2);
+          gaugeChart3.draw(gaugeChartData3, gaugeChartOptions3);
+        });
+        
+
+      })
+      .fail(function (results) {
+        document.write('Failed on Loading data');
+      }).always(function (results) {
+        //document.write('always');
+      });
+    }
+
+    </script>
+  </head>
+  <body>
+    <p>
+    <h2>THD web page</h2>
+	This is a part of THDM (<a href="https://github.com/anseok/thdm">https://github.com/anseok/thdm</a>).<br>
+	<br>
+    Copyright(c) 2016 Anseok Lee (anseok83_at_gmail_dot_com)<br>
+    MIT License
+    </p>
+
+    <h2>Line chart</h2>
+    <div id="lineChart_div" align="center" style="width: 100%"></div>
+
+    <h2>Gauge charts</h2>
+    <div id="main_container" align="center">
+    <div id="gaugeChart1_div"></div>
+    <div id="gaugeChart2_div"></div>
+    <div id="gaugeChart3_div"></div>
+    </div>
+
+
+  </body>
+</html>
