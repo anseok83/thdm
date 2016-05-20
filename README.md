@@ -4,7 +4,7 @@ THDM is for air condition monitoring system with various measures (currently, te
 
 ## Sensor part (Arduino)
 
-A list of hardware components for THDM Sensors are below. 
+A list of hardware components for THDM Sensors:
 
 * WeMos D1 WiFi uno based ESP8266 shield for arduino Compatible
 
@@ -21,7 +21,7 @@ A list of hardware components for THDM Sensors are below.
   The datasheet of the sensor is in this link (https://www.sparkfun.com/datasheets/Sensors/gp2y1010au_e.pdf).  
   You may need a 150-ohm resistor and 220uF capacitor to use the sensor, or you can use a dust sensor adapter (http://www.dfrobot.com/index.php?route=product/product&product_id=1063#.Vz7O7pOLSL8).
 
-Connections of hardware components are below.
+Connections of hardware components:
 
 * WeMos D1
 
@@ -38,7 +38,7 @@ And I've utilized DHT sensor library, ESP8266 libraries and Socket.io library (h
 
 I use Raspberry Pi 2 Model B (https://www.raspberrypi.org/products/raspberry-pi-2-model-b) with Raspbian (https://www.raspberrypi.org/downloads/raspbian) for server side operations.
 
-Software components for server side programming are belows.
+Software components for server side programmings:
 
 * Node.js (v4.4.4)
 
