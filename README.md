@@ -1,6 +1,16 @@
 # THDM (THD Monitoring)
 
-THDM is for air condition monitoring system with various measures (currently, temperature, humidity and dust density are supported) through the internet. THDM composed of sensor parts (Arduino with WiFi and various sensors) and server parts (Node.js, mongodb and visualization components).
+THDM is for air condition monitoring system with various measures (currently, temperature, humidity and dust density are supported) through the internet. 
+
+## Features and screen shots
+
+* Retreving air condition related sensor data (temperature, humidity and dust density)
+* Periodic reporting sensor data via Socket.io to server (THD Server)
+* Storing reported sensor data to database (mongodb)
+* Visualizing instantaneous and past sensor data via internet (monitoring web page)
+* Screen shots
+
+THDM is composed of sensor parts (Arduino with WiFi and various sensors) and server parts (Node.js, mongodb and visualization components).
 
 ## Sensor part (Arduino)
 
@@ -8,17 +18,17 @@ A list of hardware components for THDM Sensors:
 
 * WeMos D1 WiFi uno based ESP8266 shield for arduino Compatible
 
-  The information of the board is in this link (http://www.wemos.cc/Products/d1.html).  
-  I bought this part with this link (http://www.aliexpress.com/snapshot/7611008261.html?orderId=74819981106270).  
+  The information of the board can be found in http://www.wemos.cc/Products/d1.html.  
+  I bought the part in this [link](http://www.aliexpress.com/snapshot/7611008261.html?orderId=74819981106270).  
 
 * Temperature and humidity sensor module (KY-015)
 
   This module seems nothing but the temperature and humidity sensor (DHT-11) and a resistor. You may need a 5K resistor if you use the sensor directly.  
-  The information of the sensor is in this link (http://www.micropik.com/PDF/dht11.pdf).
+  The information of the sensor is in http://www.micropik.com/PDF/dht11.pdf.
 
 * Sharp dust sensor (GP2Y1010AU0F)
 
-  The datasheet of the sensor is in this link (https://www.sparkfun.com/datasheets/Sensors/gp2y1010au_e.pdf).  
+  The datasheet of the sensor is in https://www.sparkfun.com/datasheets/Sensors/gp2y1010au_e.pdf.  
   You may need a 150-ohm resistor and 220uF capacitor to use the sensor, or you can use a dust sensor adapter (http://www.dfrobot.com/index.php?route=product/product&product_id=1063#.Vz7O7pOLSL8).
 
 Connections of hardware components:
@@ -36,17 +46,21 @@ And I've utilized DHT sensor library, ESP8266 libraries and Socket.io library (h
 
 ## Server part (Raspberry Pi 2 Model B)
 
-I use Raspberry Pi 2 Model B (https://www.raspberrypi.org/products/raspberry-pi-2-model-b) with Raspbian (https://www.raspberrypi.org/downloads/raspbian) for server side operations.
+I use Raspberry Pi 2 Model B (https://www.raspberrypi.org/products/raspberry-pi-2-model-b) with Raspbian (https://www.raspberrypi.org/downloads/raspbian, Current version of mine is 4.1.19-v7+) for server side operations. You can use any linux machine for server side operation if you can use following components on the machine.
 
 Software components for server side programmings:
 
-* Node.js (v4.4.4)
+* Node.js (v4.4.4) and npm (2.15.1)
 
   Node.js for THD Server with express, jquery, mongodb and socket.io.
   
 * Mongodb (https://mlab.com)
 
   Could use local mongodb, but I've used mongodb storage provided by mlab.com (you can have free 500MB storage) for decreasing loads of the server.
+  
+* Forever (https://www.npmjs.com/package/forever)
+
+  For continuous running of THD Server.
   
 * Google chart (https://developers.google.com/chart/)
 
