@@ -70,3 +70,15 @@ Software components for server side programmings:
 * Google chart (https://developers.google.com/chart/)
 
   Google chart APIs to plot instantaneous and past sensor data with line and gauge charts.
+
+
+## History
+
+* Uploaded a snapshot (v0.0.2) of THDM Sensor and Server code in the [examples](https://github.com/anseok83/thdm/tree/master/examples) directory. (2016-05-21)
+
+<br><br>
+
+### p.s.
+
+This project was started for my family member as he is fighting againt a lung disease. Please pray for him to get over the difficult time.
+
