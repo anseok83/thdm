@@ -4,7 +4,7 @@ THDM is for air condition monitoring system with various measures (currently, te
 
 ## Features and screen shot
 
-* Retreving air condition related sensor data (temperature, humidity and dust density)
+* Getting air condition related sensor data (temperature, humidity and dust density)
 * Periodic reporting sensor data via Socket.io to server (THD Server)
 * Storing reported sensor data to database (mongodb)
 * Visualizing instantaneous and past sensor data via internet (monitoring web page)
@@ -54,15 +54,15 @@ And I've utilized DHT sensor library, ESP8266 libraries and Socket.io library (h
 
 I use Raspberry Pi 2 Model B (https://www.raspberrypi.org/products/raspberry-pi-2-model-b) with Raspbian (https://www.raspberrypi.org/downloads/raspbian, Current version of mine is 4.1.19-v7+) for server side operations. You can use any linux machine for server side operation if you can use following components on the machine.
 
-Software components for server side programmings:
+Software components for server side programming:
 
-* Node.js (v4.4.4) and npm (2.15.1)
+* Node.js (v4.4.4) and npm (v2.15.1)
 
   Node.js for THD Server with express, jquery, mongodb and socket.io.
   
 * Mongodb (https://mlab.com)
 
-  I've used mongodb storage service which is provided by mlab.comfor decreasing loads of the server. You can have free 500MB storage from mlab.com. Or, you can also use locally running mongodb server.
+  I've used mongodb storage service which is provided by mlab.com for decreasing loads of the server. You can have free 500MB storage from mlab.com. Or, you can also use locally running mongodb server.
   
 * Forever (https://www.npmjs.com/package/forever)
 
@@ -81,5 +81,5 @@ Software components for server side programmings:
 
 ### p.s.
 
-This project was started for my family member as he is fighting againt a lung disease. Please pray for him to get over the difficult time.
+This project was started for my family member as he is fighting against a lung disease. Please pray for him to get over the difficult time.
 
