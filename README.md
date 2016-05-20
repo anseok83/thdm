@@ -8,11 +8,14 @@ THDM is for air condition monitoring system with various measures (currently, te
 * Periodic reporting sensor data via Socket.io to server (THD Server)
 * Storing reported sensor data to database (mongodb)
 * Visualizing instantaneous and past sensor data via internet (monitoring web page)
-* Screen shots
+* Screen shot
+![An example of THD web page](/images/thd_webpage.png)
 
 THDM is composed of sensor parts (Arduino with WiFi and various sensors) and server parts (Node.js, mongodb and visualization components).
 
 ## Sensor part (Arduino)
+
+![THD sensor](/images/thd_sensor.JPG)
 
 A list of hardware components for THDM Sensors:
 
@@ -46,6 +49,8 @@ And I've utilized DHT sensor library, ESP8266 libraries and Socket.io library (h
 
 ## Server part (Raspberry Pi 2 Model B)
 
+![THD sensor](/images/thd_server.JPG)
+
 I use Raspberry Pi 2 Model B (https://www.raspberrypi.org/products/raspberry-pi-2-model-b) with Raspbian (https://www.raspberrypi.org/downloads/raspbian, Current version of mine is 4.1.19-v7+) for server side operations. You can use any linux machine for server side operation if you can use following components on the machine.
 
 Software components for server side programmings:
@@ -56,7 +61,7 @@ Software components for server side programmings:
   
 * Mongodb (https://mlab.com)
 
-  Could use local mongodb, but I've used mongodb storage provided by mlab.com (you can have free 500MB storage) for decreasing loads of the server.
+  I've used mongodb storage service which is provided by mlab.comfor decreasing loads of the server. You can have free 500MB storage from mlab.com. Or, you can also use locally running mongodb server.
   
 * Forever (https://www.npmjs.com/package/forever)
 
@@ -64,4 +69,4 @@ Software components for server side programmings:
   
 * Google chart (https://developers.google.com/chart/)
 
-  Used Google chart APIs to plot instantaneous and past sensor data with line and gauge charts.
+  Google chart APIs to plot instantaneous and past sensor data with line and gauge charts.
