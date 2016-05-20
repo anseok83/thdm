@@ -2,13 +2,15 @@
 
 THDM is for air condition monitoring system with various measures (currently, temperature, humidity and dust density are supported) through the internet. 
 
-## Features and screen shots
+## Features and screen shot
 
 * Retreving air condition related sensor data (temperature, humidity and dust density)
 * Periodic reporting sensor data via Socket.io to server (THD Server)
 * Storing reported sensor data to database (mongodb)
 * Visualizing instantaneous and past sensor data via internet (monitoring web page)
+
 * Screen shot
+
 ![An example of THD web page](/images/thd_webpage.png)
 
 THDM is composed of sensor parts (Arduino with WiFi and various sensors) and server parts (Node.js, mongodb and visualization components).
@@ -74,7 +76,7 @@ Software components for server side programmings:
 
 ## History
 
-* Uploaded a snapshot (v0.0.2) of THDM Sensor and Server code in the [examples](https://github.com/anseok83/thdm/tree/master/examples) directory. (2016-05-21)
+* Uploaded a snapshot (v0.0.2) of THD Sensor and Server codes in the [examples](https://github.com/anseok83/thdm/tree/master/examples) directory. (2016-05-21)
 
 <br><br>
 
