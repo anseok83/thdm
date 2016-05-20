@@ -8,7 +8,6 @@ THDM is for air condition monitoring system with various measures (currently, te
 * Periodic reporting sensor data via Socket.io to server (THD Server)
 * Storing reported sensor data to database (mongodb)
 * Visualizing instantaneous and past sensor data via internet (monitoring web page)
-
 * Screen shot
 
 ![An example of THD web page](/images/thd_webpage.png)
