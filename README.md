@@ -41,7 +41,7 @@ Connections of hardware components:
 
   A0 - Input from dust sensor part (PIN5 of GP2Y1010AU0F)  
   D3 - Output to dust sensor part (PIN3 of GP2Y1010AU0F)  
-  D0 - Output/input with temperature and humidity sensor module (PIN S of KY-015)  
+  D4 - Output/input with temperature and humidity sensor module (PIN S of KY-015)  
   3.3V - Vcc to all the components (dust sensor part and temperature and humidity sensor module)  
   GND - Ground to all the components
 
