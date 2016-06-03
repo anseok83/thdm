@@ -1,10 +1,10 @@
 # THDM (THD Monitoring)
 
-THDM is for air condition monitoring system with various measures (currently, temperature, humidity and dust density are supported) through the internet. 
+THDM is for air quality monitoring with various measures (currently, temperature, humidity and dust density are supported) through the internet.
 
 ## Features and screen shot
 
-* Getting air condition related sensor data (temperature, humidity and dust density)
+* Getting sensor data (temperature, humidity and dust density) for air quality measurement
 * Periodic reporting sensor data via Socket.io to server (THD Server)
 * Storing reported sensor data to database (mongodb)
 * Visualizing instantaneous and past sensor data via internet (monitoring web page)
@@ -20,7 +20,7 @@ THDM is composed of sensor parts (Arduino with WiFi and various sensors) and ser
 
 A list of hardware components for THDM Sensors:
 
-* WeMos D1 WiFi uno based ESP8266 shield for arduino Compatible
+* WeMos D1 WiFi uno based ESP8266 shield for arduino compatible
 
   The information of the board can be found in http://www.wemos.cc/Products/d1.html.  
   I bought the part in this [link](http://www.aliexpress.com/snapshot/7611008261.html?orderId=74819981106270).  
