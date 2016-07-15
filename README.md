@@ -1,6 +1,6 @@
-# THDM (THD Monitoring) for air quality monitoring
+# THDM for air quality monitoring
 
-THDM is for air quality monitoring with various measures (currently, temperature, humidity and dust density are supported) through the internet.
+THDM (Temperature, Humidity and Dust density Monitoring) is for air quality monitoring through the internet. Temperature, humidity and dust density are currently supported.
 
 ## Features and screen shot
 
