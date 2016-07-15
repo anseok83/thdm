@@ -1,4 +1,4 @@
-# THDM (THD Monitoring)
+# THDM (THD Monitoring) for air quality monitoring
 
 THDM is for air quality monitoring with various measures (currently, temperature, humidity and dust density are supported) through the internet.
 
@@ -9,7 +9,6 @@ THDM is for air quality monitoring with various measures (currently, temperature
 * Periodic reporting sensor data via Socket.io to server (THD Server)
 * Storing reported sensor data to database (mongodb)
 * Visualizing instantaneous and past sensor data via internet (monitoring web page)
-* Screen shot
 
 ### Version 0.0.5 (July 2016)
 * Standalone operation (no need Raspberry pi or any kind of servers)
