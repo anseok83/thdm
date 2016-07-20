@@ -15,13 +15,23 @@ THDM (Temperature, Humidity and Dust density Monitoring) is for air quality moni
 * Status lookup via 3 color LED
 * Wifi network configurations
 
+## Web page (Web server operates on Arduino board)
+
+* Main Page
+
 ![THD web page](/images/thd_webpage_v005_1.png "Main Page")
+
+* Graph page
+
 ![THD web page - Graph](/images/thd_webpage_v005_2.png "Graph")
+
+* Table page
+
 ![THD web page - Table](/images/thd_webpage_v005_3.png "Table")
 
 ## Arduino board (THD Sensor)
 
-![THD sensor](/images/thd_sensor_v005.JPG)
+![THD sensor](/images/thd_sensor_v005_1.jpg)
 
 A list of hardware components for THDM Sensors:
 
