@@ -15,11 +15,13 @@ THDM (Temperature, Humidity and Dust density Monitoring) is for air quality moni
 * Status lookup via 3 color LED
 * Wifi network configurations
 
-![An example of THD web page](/images/thd_webpage.png)
+![THD web page](/images/thd_webpage_v005_1.png "Main Page")
+![THD web page - Graph](/images/thd_webpage_v005_2.png "Graph")
+![THD web page - Table](/images/thd_webpage_v005_3.png "Table")
 
 ## Arduino board (THD Sensor)
 
-![THD sensor](/images/thd_sensor.JPG)
+![THD sensor](/images/thd_sensor_v005.JPG)
 
 A list of hardware components for THDM Sensors:
 
@@ -70,8 +72,8 @@ Software components (including libraries):
   
 * Google chart (https://developers.google.com/chart/)
 
-  Google chart APIs to plot instantaneous and past sensor data with line and gauge charts.
-
+  Google chart APIs to plot instantaneous and past sensor data with line and gauge charts. I've used the example code in [ESP8266 Webserver using Google Chart Objects](http://www.esp8266.com/viewtopic.php?f=29&t=3229) article to use Google char API by using Arduino board (Wemos D1) alone (without any database and Node.js servers).
+  
 
 ## History
 
