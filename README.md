@@ -68,17 +68,18 @@ Connections of hardware components:
   3.3V - Vcc to all the components (dust sensor part and temperature and humidity sensor module)  
   GND - Ground to all the components
 
-And I've utilized DHT sensor library, ESP8266 libraries and Socket.io library (https://github.com/washo4evr/Socket.io-v1.x-Library) for DHT Sensor board programming. Please find further details in each libraries' web pages.
 
 Software components (including libraries):
 
-* Socket-IO
+* DHT sensor library
+
+* Socket-IO (https://github.com/washo4evr/Socket.io-v1.x-Library)
 
   Used socket.io for initial information transfer (this is an optional procedure).
   
-* WiFiManager
+* WiFiManager (https://github.com/tzapu/WiFiManager)
 
-  Used WiFiManager library for flexible Wifi configuration without hard coding.
+  Used WiFiManager library for easy and flexible on-board Wifi configurations.
   
 * Google chart (https://developers.google.com/chart/)
 
